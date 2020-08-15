@@ -20,6 +20,18 @@ public class Stock {
 		this.price = price;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Stock)) {
+			return false;
+		}
+		Stock stock = (Stock) obj;
+		return this.getName().equals(stock.getName());
+	}
+
+
 	@Id
 	@GeneratedValue
 	private UUID id;
